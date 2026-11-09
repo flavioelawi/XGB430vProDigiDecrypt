@@ -38,6 +38,17 @@ protocol, signs in once, finds the published backup endpoint, downloads and
 decrypts the backup in memory, then prints Admin, PPPoE, and SIP credentials.
 Missing, masked, or ambiguous fields are labelled instead of guessed.
 
+## Release builds
+
+When a tag matching `v*` is pushed, GitHub Actions verifies the module, builds
+these binaries, and uploads each binary with a SHA-256 checksum to the matching
+GitHub release:
+
+- Linux x86-64 (`digi-credentials-linux-amd64`)
+- Linux ARM64 (`digi-credentials-linux-arm64`)
+- macOS ARM64 (`digi-credentials-darwin-arm64`)
+- Windows x86-64 (`digi-credentials-windows-amd64.exe`)
+
 ## Security boundaries
 
 - Connections are restricted to the entered numeric IP and normal HTTP(S)
